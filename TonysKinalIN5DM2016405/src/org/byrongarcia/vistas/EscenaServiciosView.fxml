@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.byrongarcia.controller.EscenaServiciosController">
+   <children>
+      <ImageView fitHeight="562.0" fitWidth="764.0" layoutX="-4.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/Green.jpg" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="grpFechaServicio" layoutX="87.0" layoutY="74.0" prefHeight="167.0" prefWidth="605.0">
+         <children>
+            <Label text="Codigo Servicio" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Fecha de Servicio" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="20.0" prefWidth="231.0" text="Hora de Servicio" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Tipo de Servicio" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="  Telefono Contacto" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="  Empresa" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtLugarServicio" opacity="0.81" GridPane.columnIndex="3" />
+            <TextField fx:id="txtTelefonoContacto" opacity="0.81" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="txtHoraServicio" opacity="0.81" text="hh:mm:ss" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtTipoServicio" opacity="0.8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCodigoServicio" opacity="0.81" GridPane.columnIndex="1" />
+            <Label text="  Lugar de Servicio" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnCancelar" disable="true" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbEmpresa" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="txtTipoEmpleado" opacity="0.81" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="178.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="1.0" prefWidth="137.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="155.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="40.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="86.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <TableView fx:id="tblEmpleados" layoutX="20.0" layoutY="236.0" onMouseClicked="#seleccionarElementos" prefHeight="167.0" prefWidth="715.0">
+         <columns>
+            <TableColumn fx:id="colCodigoServicio" prefWidth="58.0" text="Codigo" />
+            <TableColumn fx:id="colFecha" prefWidth="84.0" text="Fecha" />
+            <TableColumn fx:id="colTipoServicio" prefWidth="131.0" text="Tipo" />
+            <TableColumn fx:id="colHora" prefWidth="88.0" text="Hora" />
+            <TableColumn fx:id="colLugar" prefWidth="126.0" text="Lugar" />
+            <TableColumn fx:id="colTelefono" prefWidth="106.0" text="Telefono" />
+            <TableColumn fx:id="colEmpresa" prefWidth="120.0" text="Empresa" />
+         </columns>
+      </TableView>
+      <MenuBar blendMode="HARD_LIGHT" cacheHint="ROTATE" layoutX="468.0" layoutY="1.0" style="-fx-background-color: CHOCOLATE; -fx-border-color: BROWN;">
+         <menus>
+            <Menu fx:id="mAgregar" mnemonicParsing="false" text="Agregar">
+               <items>
+                  <MenuItem fx:id="miNuevo" mnemonicParsing="false" onAction="#activarControles" text="Nuevo" />
+                  <MenuItem fx:id="miAgregar" disable="true" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mEliminar" mnemonicParsing="false" onAction="#eliminar" onMenuValidation="#eliminar" text="Eliminar">
+               <items>
+                  <MenuItem fx:id="miEliminar" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mModificar" mnemonicParsing="false" text="Modificar">
+               <items>
+                  <MenuItem fx:id="miActualizar" mnemonicParsing="false" onAction="#editar" text="Actualizar" />
+                  <MenuItem fx:id="miGuardar" disable="true" mnemonicParsing="false" onAction="#guardandoCambios" text="Guardar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mReporte" mnemonicParsing="false" text="Reporte">
+               <items>
+                  <MenuItem fx:id="miGenerarReporte" mnemonicParsing="false" onAction="#imprimirReporte" text="Generar Reporte" />
+               </items>
+            </Menu>
+         </menus>
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+         <effect>
+            <Blend mode="MULTIPLY" />
+         </effect>
+      </MenuBar>
+      <Label layoutX="263.0" layoutY="14.0" text="Servicios">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.30952380952380953">
+               <stops>
+                  <Stop color="#268d2b" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="78.0" fitWidth="114.0" layoutX="6.0" onMouseClicked="#escenaEmpresas" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <image>
+            <Image url="@../imagenes/TonysLogoBaseDatos.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

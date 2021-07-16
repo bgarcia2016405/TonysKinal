@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.byrongarcia.controller.EscenaPrincipalController">
+   <children>
+      <ImageView fitHeight="504.0" fitWidth="795.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/Green.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar blendMode="HARD_LIGHT" cacheHint="ROTATE" layoutX="443.0" layoutY="1.0" prefHeight="27.0" prefWidth="228.0" style="-fx-background-color: CHOCOLATE; -fx-border-color: BROWN;">
+        <menus>
+          <Menu fx:id="mEmpresas" mnemonicParsing="false" text="Modulos">
+            <items>
+                  <MenuItem fx:id="miTipoEmpleados" mnemonicParsing="false" onAction="#escenaTipoEmpleados" style="-fx-background-color: WHEAT;" text="Tipo Empleados" />
+              <MenuItem fx:id="miEmpresas" mnemonicParsing="false" onAction="#escenaEmpresas" style="-fx-background-color: WHEAT;" text="Empresas" />
+                  <MenuItem fx:id="miTipoPlato" mnemonicParsing="false" onAction="#escenaTipoPlatos" style="-fx-background-color: WHEAT;" text="Tipo Plato" />
+                  <MenuItem fx:id="miProductos" mnemonicParsing="false" onAction="#escenaProductos" style="-fx-background-color: WHEAT;" text="Productos" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Entidades De Relación">
+               <items>
+                  <MenuItem fx:id="miProductosHasPlatos1" mnemonicParsing="false" onAction="#escenaProductosHasPlatos" style="-fx-background-color: WHEAT;" text="Productos_has_Platos" />
+                  <MenuItem fx:id="miServiciosHasEmpleados1" mnemonicParsing="false" onAction="#escenaServiciosHasEmpleados" style="-fx-background-color: WHEAT;" text="Servicios_has_Empleados" />
+                  <MenuItem fx:id="miServiciosHasPlatos1" mnemonicParsing="false" onAction="#escenaServiciosHasPlatos" style="-fx-background-color: WHEAT;" text="Servicios_has_Platos" />
+               </items>
+            </Menu>
+        </menus>
+         <effect>
+            <Blend mode="MULTIPLY" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+      </MenuBar>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/KinalLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="234.0" fitWidth="301.0" layoutX="216.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/TonysLogoBaseDatos.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

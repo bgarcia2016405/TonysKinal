@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpresas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cfdb917c-c068-42af-8033-5d4da1aeb3e4">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="310"/>
+	<queryString>
+		<![CDATA[call sp_ListarEmpresas]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="657" width="572" height="95" uuid="5ee80a18-1878-4e7c-8d89-435ba9669739"/>
+				<imageExpression><![CDATA["C:\\Users\\Byron\\Documents\\NetBeansProjects\\TonysKinalIN5DM2016405\\src\\org\\byrongarcia\\imagenes\\Ondas - copia.jpg"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="572" height="79" uuid="f6c314c5-d43d-4d94-a9c3-a2a92e8bc569"/>
+				<imageExpression><![CDATA["C:\\Users\\Byron\\Documents\\NetBeansProjects\\TonysKinalIN5DM2016405\\src\\org\\byrongarcia\\imagenes\\Ondas.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="100" y="254" width="336" height="239" uuid="d5bff4c8-55af-4b1d-a8e0-d7665edbc28b"/>
+				<imageExpression><![CDATA["C:\\Users\\Byron\\Documents\\NetBeansProjects\\TonysKinalIN5DM2016405\\src\\org\\byrongarcia\\imagenes\\Plato.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="100" height="79" backcolor="#00CC00" uuid="1fc99495-56a5-476a-9340-a1577c5b99bd"/>
+				<imageExpression><![CDATA["C:\\Users\\Byron\\Documents\\NetBeansProjects\\TonysKinalIN5DM2016405\\src\\org\\byrongarcia\\imagenes\\TonysLogo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="572" height="35" backcolor="#CC6600" uuid="32d78bee-d774-42e4-851a-d2d89ab14ea1"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="180" y="3" width="228" height="32" uuid="2d7bf7c3-854c-4a3e-9c41-59d5f773934b"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Reporte de Empresas]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="572" height="20" backcolor="#007828" uuid="f683dc46-71b6-4bde-9876-3bc97d579b34"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="1" width="100" height="20" uuid="5b49fd0e-f6c4-4ff3-a373-26cb5de1f32c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="1" width="49" height="20" uuid="016ec677-4700-4df5-8ad3-b2e3f8f00087"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="0" width="62" height="20" uuid="7aaca167-267c-4bcf-b2c4-58e78af54764"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="0" width="55" height="20" uuid="155e446d-ef9b-4276-9bcd-2663e61e7ba1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="5ac59ba7-58c1-4473-be52-31b7b8e58bb7"/>
+				<textFieldExpression><![CDATA[$F{codigoEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="0" width="100" height="20" uuid="8ee4a41e-e3e3-4d42-ada4-73f5f800abf6"/>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="0" width="100" height="20" uuid="12b1d4a2-183c-4bb5-856b-11c6acca4515"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="3" width="90" height="20" uuid="b9e05e7d-9be9-4d06-bef1-ec14a62887ff"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="23" width="572" height="1" forecolor="#009900" backcolor="#00CC00" uuid="22ca91c6-ac65-4c2c-8955-87be96bf41f2"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="525" y="20" width="100" height="20" uuid="901393ba-2b57-48a9-bf15-91bd9b5f5724"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

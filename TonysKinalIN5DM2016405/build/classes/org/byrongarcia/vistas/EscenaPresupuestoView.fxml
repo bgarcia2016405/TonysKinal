@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.byrongarcia.controller.EscenaPresupuestoController">
+   <children>
+      <ImageView fitHeight="452.0" fitWidth="606.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/Green.jpg" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="grpFechaSolicitud" layoutX="133.0" layoutY="87.0" prefHeight="108.0" prefWidth="333.0">
+         <children>
+            <TextField fx:id="txtCantidadPresupuesto" opacity="0.81" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCodigoPresupuesto" opacity="0.81" GridPane.columnIndex="1" />
+            <Label text="Codigo Presupuesto" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Fecha De Solicitud" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Capital" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Empresa" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbCodigoEmpresa" prefHeight="25.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="147.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="98.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <TableView fx:id="tblPresupuesto" layoutX="64.0" layoutY="210.0" onMouseClicked="#seleccionarElementos" prefHeight="119.0" prefWidth="471.0">
+         <columns>
+            <TableColumn fx:id="colCodigoPresupuesto" prefWidth="135.0" text="Código Presupuesto" />
+            <TableColumn fx:id="colFechaDeSolicitud" prefWidth="135.0" text="Fecha De Solicitud" />
+            <TableColumn fx:id="colCapital" minWidth="0.0" prefWidth="84.0" text="Capital" />
+            <TableColumn fx:id="colCodigoEmpresa" prefWidth="128.0" text="Codigo Empresa" />
+         </columns>
+      </TableView>
+      <MenuBar blendMode="HARD_LIGHT" cacheHint="ROTATE" layoutX="340.0" layoutY="-1.0" style="-fx-background-color: CHOCOLATE; -fx-border-color: BROWN;">
+         <menus>
+            <Menu fx:id="mAgregar" mnemonicParsing="false" text="Agregar">
+               <items>
+                  <MenuItem fx:id="miNuevo" mnemonicParsing="false" onAction="#activarControles" text="Nuevo" />
+                  <MenuItem fx:id="miAgregar" disable="true" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mEliminar" mnemonicParsing="false" text="Eliminar">
+               <items>
+                  <MenuItem fx:id="miEliminar" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mModificar" mnemonicParsing="false" text="Modificar">
+               <items>
+                  <MenuItem fx:id="miActualizar" mnemonicParsing="false" onAction="#editar" text="Actualizar" />
+                  <MenuItem fx:id="miGuardar" disable="true" mnemonicParsing="false" onAction="#guardandoCambios" text="Guardar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mReporte" mnemonicParsing="false" text="Reporte">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#imprimirReporte" text="Generar Reporte" />
+               </items>
+            </Menu>
+         </menus>
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+         <effect>
+            <Blend mode="MULTIPLY" />
+         </effect>
+      </MenuBar>
+      <Button fx:id="btnCancelar" disable="true" layoutX="504.0" layoutY="170.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Label layoutX="207.0" layoutY="14.0" text="Presupuesto">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.30952380952380953">
+               <stops>
+                  <Stop color="#268d2b" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="105.0" fitWidth="114.0" layoutX="10.0" onMouseClicked="#escenaEmpresas" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <image>
+            <Image url="@../imagenes/TonysLogoBaseDatos.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

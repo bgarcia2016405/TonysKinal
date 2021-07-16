@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.byrongarcia.controller.EscenaServiciosHasPlatosController">
+   <children>
+      <ImageView fitHeight="453.0" fitWidth="599.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/Green.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="215.0" layoutY="7.0" text="Servicios">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.30952380952380953">
+               <stops>
+                  <Stop color="#268d2b" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="284.0" layoutY="38.0" text="Platos">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.30952380952380953">
+               <stops>
+                  <Stop color="#268d2b" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <GridPane layoutX="150.0" layoutY="99.0" prefHeight="60.0" prefWidth="369.0">
+         <children>
+            <Label text="Servicios" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Platos" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbServicios" prefHeight="25.0" prefWidth="290.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="cbPlatos" prefHeight="25.0" prefWidth="328.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="79.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="290.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <ImageView fitHeight="105.0" fitWidth="114.0" layoutX="7.0" layoutY="2.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <image>
+            <Image url="@../imagenes/TonysLogoBaseDatos.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblServiciosHasPlatos" layoutX="115.0" layoutY="184.0" onMouseClicked="#seleccionarElementos" prefHeight="139.0" prefWidth="369.0">
+        <columns>
+          <TableColumn fx:id="colServicios" prefWidth="191.0" text="Servicios" />
+          <TableColumn fx:id="colPlatos" prefWidth="177.0" text="Platos" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

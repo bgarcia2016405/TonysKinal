@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.byrongarcia.controller.EscenaTipoPlatoController">
+   <children>
+      <ImageView fitHeight="450.0" fitWidth="687.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/Green.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="215.0" layoutY="7.0" text="Tipo">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.30952380952380953">
+               <stops>
+                  <Stop color="#268d2b" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="284.0" layoutY="38.0" text="Plato">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.30952380952380953">
+               <stops>
+                  <Stop color="#268d2b" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <MenuBar blendMode="HARD_LIGHT" cacheHint="ROTATE" layoutX="333.0" layoutY="1.0" style="-fx-background-color: CHOCOLATE; -fx-border-color: BROWN;">
+         <menus>
+            <Menu fx:id="mAgregar" mnemonicParsing="false" text="Agregar">
+               <items>
+                  <MenuItem fx:id="miNuevo" mnemonicParsing="false" onAction="#activarControles" text="Nuevo" />
+                  <MenuItem fx:id="miAgregar" disable="true" mnemonicParsing="false" onAction="#nuevo" text="Agregar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mEliminar" mnemonicParsing="false" text="Eliminar">
+               <items>
+                  <MenuItem fx:id="miEliminar" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mModificar" mnemonicParsing="false" text="Modificar">
+               <items>
+                  <MenuItem fx:id="miActualizar" mnemonicParsing="false" onAction="#editar" text="Actualizar" />
+                  <MenuItem fx:id="miGuardar" disable="true" mnemonicParsing="false" onAction="#guardandoCambios" text="Guardar" />
+               </items>
+            </Menu>
+            <Menu fx:id="mModulos" mnemonicParsing="false" text="Modulos">
+               <items>
+                  <MenuItem fx:id="miPlatos" mnemonicParsing="false" onAction="#escenaPlato" style="-fx-background-color: WHEAT;" text="Platos" />
+               </items>
+            </Menu>
+         </menus>
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+         <effect>
+            <Blend mode="MULTIPLY" />
+         </effect>
+      </MenuBar>
+      <GridPane layoutX="132.0" layoutY="83.0" prefHeight="60.0" prefWidth="324.0">
+         <children>
+            <Label text="Codigo" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Descripccion" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCodigoTipoPlato" opacity="0.81" GridPane.columnIndex="1" />
+            <TextField fx:id="txtDescripcion" opacity="0.81" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="146.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="171.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <TableView fx:id="tblTipoPlato" layoutX="52.0" layoutY="190.0" onMouseClicked="#seleccionarElementos" prefHeight="135.0" prefWidth="481.0">
+         <columns>
+            <TableColumn fx:id="colCodigoTipoPlato" prefWidth="82.0" text="Codigo" />
+            <TableColumn fx:id="colDescripccion" prefWidth="412.0" text="Descripccion" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnCancelar" disable="true" layoutX="466.0" layoutY="143.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <ImageView fitHeight="105.0" fitWidth="114.0" layoutY="2.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/TonysLogoBaseDatos.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
